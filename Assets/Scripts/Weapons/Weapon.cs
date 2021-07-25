@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    
+    [SerializeField] private SO_WeaponData weaponData;
 
     protected Animator baseAnimator;
     protected Animator weaponAnimator;
@@ -45,6 +45,15 @@ public class Weapon : MonoBehaviour
     }
 
     #region  Animation Triggers
+    public virtual void AnimationStartMovementTrigger()
+    {
+        state.SetPlayerVelocity(weaponData.movementSpeed[attackCounter]);
+    }
+
+    public virtual void AnimationStopMovementTrigger()
+    {
+        state.SetPlayerVelocity(0f);
+    }
 
     public virtual void AnimationFinishTrigger()
     {
