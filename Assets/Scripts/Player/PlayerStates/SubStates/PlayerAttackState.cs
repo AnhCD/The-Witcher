@@ -20,7 +20,7 @@ public class PlayerAttackState : PlayerAbilityState
     {
         base.Exit();
 
-        weapon.EnterWeapon();
+        weapon.ExitWeapon();
     }
 
     public void SetWeapon(Weapon weapon)
