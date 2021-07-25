@@ -6,6 +6,8 @@ public class PlayerAttackState : PlayerAbilityState
 {
     private Weapon weapon;
 
+    private int xInput;
+
     private float velocityToSet;
     private bool setVelocity;
 
@@ -31,6 +33,11 @@ public class PlayerAttackState : PlayerAbilityState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        xInput = player.InputHandler.NormInputX;
+
+        player.CheckIfShouldFlip(xInput);
+        
         if(setVelocity)
         {
             player.SetVelocityX(velocityToSet * player.FacingDirection);
