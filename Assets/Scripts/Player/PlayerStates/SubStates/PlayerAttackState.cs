@@ -10,6 +10,7 @@ public class PlayerAttackState : PlayerAbilityState
 
     private float velocityToSet;
     private bool setVelocity;
+    private bool shouldCheckFlip;
 
     public PlayerAttackState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
@@ -36,8 +37,11 @@ public class PlayerAttackState : PlayerAbilityState
 
         xInput = player.InputHandler.NormInputX;
 
-        player.CheckIfShouldFlip(xInput);
-        
+        if(shouldCheckFlip)
+        {
+            player.CheckIfShouldFlip(xInput);
+        }
+
         if(setVelocity)
         {
             player.SetVelocityX(velocityToSet * player.FacingDirection);
@@ -56,6 +60,11 @@ public class PlayerAttackState : PlayerAbilityState
 
         velocityToSet = velocity;
         setVelocity = true;
+    }
+
+    public void SetFlipCheck(bool value)
+    {
+        shouldCheckFlip = value;
     }
 
     #region  Animation Triggers
