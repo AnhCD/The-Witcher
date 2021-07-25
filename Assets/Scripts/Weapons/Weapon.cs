@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour
     public virtual void EnterWeapon()
     {
         gameObject.SetActive(true);
-        if(attackCounter >= 3)
+        if(attackCounter >= weaponData.movementSpeed.Length)
         {
             attackCounter = 0;
         }
