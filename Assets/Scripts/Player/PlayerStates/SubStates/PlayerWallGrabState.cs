@@ -60,8 +60,8 @@ public class PlayerWallGrabState : PlayerTouchingWallState
     private void HoldPosition()
     {
         player.transform.position = holdPostion;
-        player.SetVolocityX(0f);
-        player.SetVolocityY(0f);
+        player.SetVelocityX(0f);
+        player.SetVelocityY(0f);
     }
 
     public override void PhysicsUpdate()

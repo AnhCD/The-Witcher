@@ -29,6 +29,11 @@ public class PlayerAttackState : PlayerAbilityState
         weapon.InitializeWeapon(this);
     }
 
+    public void SetPlayerVelocity(float velocity)
+    {
+        player.SetVelocityX(velocity * player.FacingDirection);
+    }
+
     #region  Animation Triggers
     
     public override void AnimationFinishTrigger()

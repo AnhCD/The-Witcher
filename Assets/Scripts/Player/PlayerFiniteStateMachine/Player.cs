@@ -124,14 +124,14 @@ public class Player : MonoBehaviour
         RB.velocity = workspace;
         CurrenVelocity = workspace;
     }
-    public void SetVolocityX(float velocity)
+    public void SetVelocityX(float velocity)
     {
         workspace.Set(velocity, CurrenVelocity.y);
         RB.velocity = workspace;
         CurrenVelocity = workspace;
     }
 
-    public void SetVolocityY(float velocity)
+    public void SetVelocityY(float velocity)
     {
         workspace.Set(CurrenVelocity.x, velocity);
         RB.velocity = workspace;

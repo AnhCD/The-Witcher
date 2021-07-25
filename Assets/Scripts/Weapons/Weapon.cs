@@ -24,14 +24,22 @@ public class Weapon : MonoBehaviour
     public virtual void EnterWeapon()
     {
         gameObject.SetActive(true);
+        if(attackCounter >= 3)
+        {
+            attackCounter = 0;
+        }
         baseAnimator.SetBool("attack", true);
         weaponAnimator.SetBool("attack", true);
+        baseAnimator.SetInteger("attackCounter", attackCounter);
+        weaponAnimator.SetInteger("attackCounter", attackCounter);
     }
 
     public virtual void ExitWeapon()
     {
         baseAnimator.SetBool("attack", false);
         weaponAnimator.SetBool("attack", false);
+
+        attackCounter++;
 
         gameObject.SetActive(false);
     }

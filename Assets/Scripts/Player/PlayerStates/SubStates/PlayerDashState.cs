@@ -40,7 +40,7 @@ public class PlayerDashState : PlayerAbilityState
 
         if(player.CurrenVelocity.y > 0)
         {
-            player.SetVolocityY(player.CurrenVelocity.y * playerData.dashEndYMultiplier);
+            player.SetVelocityY(player.CurrenVelocity.y * playerData.dashEndYMultiplier);
         }
     }
 
