@@ -14,7 +14,7 @@ public class PlayerWallClimbState : PlayerTouchingWallState
         base.LogicUpdate();
         if(!isExittingState)
         {
-            player.SetVelocityY(playerData.wallClimbVelocity);
+            core.Movement.SetVelocityY(playerData.wallClimbVelocity);
             if(yInput != 1)
             {
                 stateMachine.ChangeState(player.WallGrabState);

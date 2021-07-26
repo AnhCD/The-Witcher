@@ -18,7 +18,7 @@ public class PlayerWallSlideState : PlayerTouchingWallState
                 stateMachine.ChangeState(player.WallGrabState);
             }
         }
-        player.SetVelocityY(-playerData.wallSlideVelocity);
+        core.Movement.SetVelocityY(-playerData.wallSlideVelocity);
 
         
     }
