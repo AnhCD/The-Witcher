@@ -9,10 +9,11 @@ public class Core : MonoBehaviour
     private void Awake()
     {
         Movement = GetComponentInChildren<Movement>();
+        CollisionSenses = GetComponentInChildren<CollisionSenses>();
         if (!Movement || !CollisionSenses)
         {
             Debug.LogError("Missing Core Component");
-            CollisionSenses = GetComponentInChildren<CollisionSenses>();
+            
         }
     }
 
