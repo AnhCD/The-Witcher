@@ -37,9 +37,14 @@ public class Goblin : Entity
     [SerializeField]
     private Transform rangeAttackPosition;
 
-    public override void Start()
+    public void Start()
     {
-        base.Start();
+        stateMachine.Intialize(moveState);
+    }
+
+    public override void Awake()
+    {
+        base.Awake();
 
         moveState = new Goblin_MoveState(this, stateMachine, "move", moveStateData, this);
         idleState = new Goblin_IdleState(this, stateMachine, "idle", idleStateData, this);
@@ -50,7 +55,7 @@ public class Goblin : Entity
         deadState = new Goblin_DeadState(this, stateMachine, "dead", deadStateData, this);
         dodgeState = new Goblin_DodgeState(this, stateMachine, "dodge", dodgeStateData, this);
         rangeAttackState = new Goblin_RangeAttackState(this, stateMachine, "rangeAttack",rangeAttackPosition, rangeAttackStateData, this);
-        stateMachine.Intialize(moveState);
+        
     }
 
     public override void Damage(AttackDetails attackDetails)

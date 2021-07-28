@@ -39,7 +39,7 @@ public class FlyEye_PlayerDetectedState : PlayerDetectedState
         }
         else if (!isDetectingLedge)
         {
-            entity.Flip();
+            core.Movement.Flip();
             stateMachine.ChangeState(enemy.moveState);
         }
     }

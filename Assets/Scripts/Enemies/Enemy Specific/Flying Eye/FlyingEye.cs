@@ -32,9 +32,14 @@ public class FlyingEye : Entity
     [SerializeField]
     private Transform meleeAttackPosition;
 
-    public override void Start()
+    public void Start()
     {
-        base.Start();
+        stateMachine.Intialize(moveState);
+    }
+
+    public override void Awake()
+    {
+        base.Awake();
 
         moveState = new FlyEye_MoveState(this, stateMachine, "move", moveStateData, this);
         idleState = new FlyEye_IdleState(this, stateMachine, "idle", idleStateData, this);
@@ -45,7 +50,7 @@ public class FlyingEye : Entity
         stunState = new FlyEye_StunState(this, stateMachine, "stun", stunStateData, this);
         deadState = new FlyEye_DeadState(this, stateMachine, "dead", deadStateData, this);
 
-        stateMachine.Intialize(moveState);
+        
     }
 
     public override void OnDrawGizmos()
