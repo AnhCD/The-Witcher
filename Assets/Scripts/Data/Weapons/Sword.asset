@@ -15,10 +15,10 @@ MonoBehaviour:
   attackDetails:
   - attackName: Up Slash
     movementSpeed: 3
-    damageAmount: 10
+    damageAmount: 5
   - attackName: Down Slash
     movementSpeed: 4
-    damageAmount: 15
+    damageAmount: 10
   - attackName: Swing slash
     movementSpeed: 2
-    damageAmount: 20
+    damageAmount: 15
